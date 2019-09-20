@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
 			//  번호 생성 (HashSet을 통해 중복값 제거)
 			Random rand = new Random();
 			IntStream.range(0,6).forEach(i -> {
-				while(!lotto.add(rand.nextInt(45)+1)){};
 				//  HashSet.add()는 add의 결과를 boolean으로 return
+				while(!lotto.add(rand.nextInt(45)+1));
 			});
 
 			AtomicInteger progress = new AtomicInteger();
@@ -140,10 +140,16 @@ public class MainActivity extends AppCompatActivity {
 			//  이 메소드는 UI스레드에서 실행된다.
 			if(list.size()>0){
 				progressText.setText("Success!");
+				IntStream.range(0,list.size()).forEach(i->{
+					resultImage.get(i).setImageBitmap(list.get(i));
+					progressBar.setProgress(100,true);
+				});
+				/*
 				for(int i=0; i<list.size(); i++){
 					resultImage.get(i).setImageBitmap(list.get(i));
 					progressBar.setProgress(100,true);
 				}
+				 */
 			}else{
 				progressText.setText("Failed..");
 			}
