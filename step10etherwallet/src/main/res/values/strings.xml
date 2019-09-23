@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Step10EtherWallet</string>
+    <string name="title_activity_basic">basicActivity</string>
+    <string name="title_activity_detail">DetailActivity</string>
+</resources>
