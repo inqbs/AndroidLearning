@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Step11Fragment</string>
+    <string name="fragment_text">Fragment Text</string>
+</resources>

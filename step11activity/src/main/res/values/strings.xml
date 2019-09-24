@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Activity</string>
+    <string name="btn_alert">alertBtn</string>
+    <string name="btn_move">moveBtn</string>
+
+    <string name="msg_alert">알림~</string>
+    <string name="msg_empty_edit_txt">Input something...</string>
+
+    <string name="btn_confirm">확인</string>
+</resources>
