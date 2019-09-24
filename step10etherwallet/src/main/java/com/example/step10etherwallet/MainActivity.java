@@ -29,7 +29,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity  implements AdapterView.OnItemClickListener{
+public class MainActivity extends AppCompatActivity
+		implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
 	private static final int REQ_MAKE_WALLET = 0;
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
 		adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,walletList);
 		listView.setAdapter(adapter);
 		listView.setOnItemClickListener(this);
+		listView.setOnItemLongClickListener(this);
 
 		/*
 		FloatingActionButton fab = findViewById(R.id.fab);
@@ -174,8 +176,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
 
 		new AlertDialog.Builder(this)
 				.setTitle("비밀번호를 입력해 주세요")
-				.setView(LayoutInflater.from(this).inflate(R.layout.password_input,
-						findViewById(R.id.linearLayout),false))
+				.setView(pwdView)
 				.setPositiveButton("입력", (dialog, which) -> {
 
 					//  이부분 빈값이 return
@@ -188,10 +189,30 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
 						intent.putExtra("pwd", pwd);
 						startActivity(intent);
 					}else{
-						Toast.makeText(this, "Pwd 공란 : "+pwd, Toast.LENGTH_SHORT).show();
+						Toast.makeText(this, "Pwd 공란 : "+inputPwd.length(), Toast.LENGTH_SHORT).show();
 					}
 				})
 				.setNegativeButton("취소", null)
 				.create().show();
+	}
+
+	@Override
+	public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+		int isAllow = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+		if (isAllow != PackageManager.PERMISSION_GRANTED){
+			ActivityCompat.requestPermissions(this,
+					new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+					REQ_MAKE_WALLET);
+			return true;
+		}
+		new AlertDialog.Builder(this)
+				.setTitle("경고")
+				.setMessage("이 지갑을 삭제하시겠습니까?")
+				.setPositiveButton("삭제", (dialog, which) -> {
+
+				})
+				.setNegativeButton("취소", null)
+				.create().show();
+		return true;
 	}
 }

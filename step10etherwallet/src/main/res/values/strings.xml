@@ -1,5 +1,31 @@
 <resources>
-    <string name="app_name">Step10EtherWallet</string>
+    <string name="app_name">EtherWallet</string>
     <string name="title_activity_basic">basicActivity</string>
     <string name="title_activity_detail">DetailActivity</string>
+
+    <!-- main -->
+    <string name="add_address">지갑 추가</string>
+
+
+    <!-- detail_activity -->
+
+    <string name="detail_info">계정 정보</string>
+    <string name="detail_send_title">송금하기</string>
+
+    <string name="current_balance">잔액</string>
+    <string name="current_address">주소</string>
+    <string name="target_address">송금대상 (주소)</string>
+    <string name="target_eth">송금액</string>
+
+
+    <!-- Alert Message -->
+    <string-array name="qes_type">
+
+    </string-array>
+    <string name="qes_input">을(를) 입력해 주세요</string>
+    <string name="qes_confirm"> 하시겠습니까?</string>
+    <string name="alert_success">작업 성공</string>
+    <string name="alert_failed">작업 실패</string>
+    <string name="alert_connection_failed">통신 오류</string>
+
 </resources>

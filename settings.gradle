@@ -1,2 +1,2 @@
-include ':app', ':step01layout', ':step02pagemove', ':step03listview', ':step04customlistview', ':step05asynctask', ':step06httprequest', ':step07json', ':step08web3j', ':step09sdcard', ':step10etherwallet'
+include ':app', ':step01layout', ':step02pagemove', ':step03listview', ':step04customlistview', ':step05asynctask', ':step06httprequest', ':step07json', ':step08web3j', ':step09sdcard', ':step10etherwallet', ':testapp'
 rootProject.name='Hello'
