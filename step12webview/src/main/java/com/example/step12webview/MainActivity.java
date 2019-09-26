@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
 		ws.setDomStorageEnabled(true);
 
 		webView.setWebViewClient(new WebViewClient());
-		webView.loadUrl("http://14.63.164.99:80/index.html");
+
+		//  asset 폴더의 index.html을 실행
+		webView.loadUrl("file:///android_asset/www/index.html");
 
 	}
 }

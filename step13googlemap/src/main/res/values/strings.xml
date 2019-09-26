@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Step13GoogleMap</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="my_home">to my home</string>
+</resources>
